@@ -122,10 +122,35 @@ function typeText3() {
       textElement.innerHTML += text3.charAt(index3);
       index3++;
       setTimeout(typeText3, 100); // Задержка между буквами (100 мс)
+  } else {
+      setTimeout(deleteText3, 500); // Пауза перед удалением текста
   }
 }
 
-typeText1(); // Начинаем анимацию
+// Функция для удаления третьего текста
+function deleteText3() {
+  if (index3 >= 0) {
+      textElement.innerHTML = text3.substring(0, index3);
+      index3--;
+      setTimeout(deleteText3, 100); // Задержка между удалением букв (100 мс)
+  } else {
+      setTimeout(resetAnimation, 500); // Пауза перед началом четвёртого текста
+  }
+}
+
+// Функция для печати четвёртого текста
+
+// Перезапуск анимации
+function resetAnimation() {
+  index1 = 0;
+  index2 = 0;
+  index3 = 0;
+  textElement.innerHTML = "";
+  setTimeout(typeText1, 500); // Снова запускаем анимацию
+}
+
+// Запуск анимации
+typeText1();
 
 
 
