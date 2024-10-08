@@ -127,3 +127,30 @@ function typeText3() {
 
 typeText1(); // Начинаем анимацию
 
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const cursor = document.createElement("div");
+  cursor.className = "cursor";
+  document.body.appendChild(cursor);
+
+
+  document.addEventListener("mousemove", function(e) {
+
+      const cursorX = e.clientX - cursor.offsetWidth / 2;
+      const cursorY = e.clientY - cursor.offsetHeight / 2;
+
+
+      cursor.style.left = cursorX + "px";
+      cursor.style.top = cursorY + "px";
+
+      const hue = Math.round((e.clientX / window.innerWidth) * 360);
+
+      cursor.style.backgroundColor = "#00f9ff";
+  })
+})

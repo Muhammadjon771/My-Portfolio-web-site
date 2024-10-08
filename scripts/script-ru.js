@@ -68,21 +68,15 @@ toggleThemeButton.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-
 const text1 = "Асламов Мухаммаджон";
 const text2 = "Front-End Разработчик";
-const text3 = "Студент"
+const text3 = "Студент";
 const textElement = document.getElementById("text");
+
 let index1 = 0;
 let index2 = 0;
 let index3 = 0;
+let index4 = 0;
 
 // Функция для печати первого текста
 function typeText1() {
@@ -95,7 +89,7 @@ function typeText1() {
     }
 }
 
-// Функция для удаления текста по одной букве
+// Функция для удаления первого текста
 function deleteText1() {
     if (index1 >= 0) {
         textElement.innerHTML = text1.substring(0, index1);
@@ -112,28 +106,81 @@ function typeText2() {
         textElement.innerHTML += text2.charAt(index2);
         index2++;
         setTimeout(typeText2, 100); // Задержка между буквами (100 мс)
+    } else {
+        setTimeout(deleteText2, 500); // Пауза перед удалением текста
     }
-    else {
-      setTimeout(deleteText2, 500); // Пауза перед удалением текста
-  }
 }
 
+// Функция для удаления второго текста
 function deleteText2() {
-  if (index2 >= 0) {
-      textElement.innerHTML = text2.substring(0, index2);
-      index2--;
-      setTimeout(deleteText2, 100); // Задержка между удалением букв (100 мс)
-  } else {
-      setTimeout(typeText3, 500); // Пауза перед началом второго текста
-  }
+    if (index2 >= 0) {
+        textElement.innerHTML = text2.substring(0, index2);
+        index2--;
+        setTimeout(deleteText2, 100); // Задержка между удалением букв (100 мс)
+    } else {
+        setTimeout(typeText3, 500); // Пауза перед началом третьего текста
+    }
 }
 
+// Функция для печати третьего текста
 function typeText3() {
-  if (index3 < text3.length) {
-      textElement.innerHTML += text3.charAt(index3);
-      index3++;
-      setTimeout(typeText3, 100); // Задержка между буквами (100 мс)
-  }
+    if (index3 < text3.length) {
+        textElement.innerHTML += text3.charAt(index3);
+        index3++;
+        setTimeout(typeText3, 100); // Задержка между буквами (100 мс)
+    } else {
+        setTimeout(deleteText3, 500); // Пауза перед удалением текста
+    }
 }
 
-typeText1(); // Начинаем анимацию
+// Функция для удаления третьего текста
+function deleteText3() {
+    if (index3 >= 0) {
+        textElement.innerHTML = text3.substring(0, index3);
+        index3--;
+        setTimeout(deleteText3, 100); // Задержка между удалением букв (100 мс)
+    } else {
+        setTimeout(resetAnimation, 500); // Пауза перед началом четвёртого текста
+    }
+}
+
+// Функция для печати четвёртого текста
+
+// Перезапуск анимации
+function resetAnimation() {
+    index1 = 0;
+    index2 = 0;
+    index3 = 0;
+    textElement.innerHTML = "";
+    setTimeout(typeText1, 500); // Снова запускаем анимацию
+}
+
+// Запуск анимации
+typeText1();
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cursor = document.createElement("div");
+    cursor.className = "cursor";
+    document.body.appendChild(cursor);
+  
+  
+    document.addEventListener("mousemove", function(e) {
+  
+        const cursorX = e.clientX - cursor.offsetWidth / 2;
+        const cursorY = e.clientY - cursor.offsetHeight / 2;
+  
+  
+        cursor.style.left = cursorX + "px";
+        cursor.style.top = cursorY + "px";
+  
+        const hue = Math.round((e.clientX / window.innerWidth) * 360);
+  
+        cursor.style.backgroundColor = "#00f9ff";
+    })
+  })

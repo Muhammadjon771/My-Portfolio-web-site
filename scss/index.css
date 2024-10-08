@@ -19,6 +19,15 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.cursor{
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:  #087c6e;
+  pointer-events: none;
+  z-index: 9999;
+}
 .light-mode {
   background-color: white;
   color: black;
