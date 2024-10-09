@@ -10,6 +10,140 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Aslamov Muhammadjon</title>
     <style>
+      @media screen and (min-width: 280px) and (max-width: 1080px) {
+  body {
+    overflow-x: hidden;
+  }
+  .defaultMargin {
+    margin: 0 10vw;
+  }
+  .navbar .brand__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .navbar .brand__container .toggle {
+    display: block;
+  }
+  .navbar .links {
+    display: none;
+  }
+  .nav__link{
+    display: flex;
+    justify-content: center;
+  }
+  .logo{
+    display: flex !important;
+    justify-content: center;
+  }
+  .responsive__navbar .links ul ul{
+    display: flex;
+    justify-content: center;
+  }
+  .cont{
+    margin-top: 20px;
+  }
+  
+  .hero {
+    margin: 0 10vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: 100%;
+    gap: 2rem;
+  }
+  .hero .content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero .content .title h1 {
+    font-size: 2rem;
+  }
+  .hero .image {
+    position: initial;
+  }
+  .hero .image img {
+    position: initial;
+    height: 100%;
+    width: 100%;
+  }
+  .about {
+    margin: 0 10vw;
+  }
+  .about img {
+    width: 100% !important;
+  }
+  .skills .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cursor{
+    display: none;
+  }
+  .portfolio {
+    display: none;
+  }
+  .services .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .languages .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 2rem 10vw;
+    gap: 5vw;
+  }
+  .contact .left .form input {
+    padding-right: 10vw;
+  }
+  .contact .right img {
+    width: 100%;
+  }
+  footer {
+    padding: 5vw 10vw;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 10vw;
+  }
+  .lower__footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    padding: 5vw;
+    gap: 1rem;
+  }
+
+
+}
+
       button {
   padding: 1rem 1.8rem;
   text-transform: uppercase;
@@ -107,7 +241,7 @@ button:hover {
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Services</a></li>
           <li><i class="fa-brands fa-github"></i></li>
-          <li><i class="fab fa-twitter"></i></li>
+          <li><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
           <li><i class="fab fa-instagram"></i></li>
           <button id="toggleTheme">
             <i class="fa-regular fa-sun" id="sunIcon"></i>
@@ -131,14 +265,10 @@ button:hover {
           
           <ul>
             <li class="nav__link logo"><i class="fa-brands fa-github"></i></li>
-            <li class="nav__link logo"><i class="fab fa-twitter"></i></li>
+            <li class="nav__link logo"><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
             <li class="nav__link logo"><i class="fab fa-instagram"></i></li>
             
           </ul>
-          <button id="toggleTheme">
-            <i class="fa-regular fa-sun" id="sunIcon"></i>
-            <i class="fa-regular fa-moon" id="moonIcon"></i>
-        </button>
         
           <button class="nav__link cont" onclick="">
             <i class="far fa-id-card"></i> Contact US
@@ -159,7 +289,7 @@ button:hover {
       
     </section>
     <div class="image">
-      <img src="/assets/man-removebg-preview.png" alt="" />
+      <img src="" alt="" />
     </div>
     
     <div class="spring" id="springL1">
@@ -316,7 +446,7 @@ button:hover {
             <h3>Agency Website</h3>
             <p>An impressive website for any kind of agency.</p>
             <div class="image img-1">
-              <img src="./assets/screencapture-temuriylaravlodi-uz-2024-10-08-13_05_36.png" alt="" />
+              <img src="./assets/screencapture-temuriylaravlodi-uz-ecommerce-2024-10-08-17_29_16.png" alt="" />
             </div>
           </div>
         </div>
@@ -324,7 +454,7 @@ button:hover {
           <h3>Portfloio Website</h3>
           <p>A portolio that lands you all the offers you need.</p>
           <div class="image">
-            <img src="./assets/screencapture-127-0-0-1-5500-index-en-html-2024-10-08-12_53_58.png" alt="" />
+            <img src="./assets/screencapture-127-0-0-1-5500-index-ru-html-2024-10-08-17_07_41.png" alt="" />
           </div>
         </div>
         <div class="design right">
@@ -423,8 +553,8 @@ button:hover {
         <form action="" class="form">
           <input class="input" type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
-          <input type="tel"  placeholder="Number" />
-          <button type="submit">Contact</button>
+          <input type="text"  placeholder="Text" />
+          <button type="submit">Send</button>
         </form>
       </div>
       <div class="right">
@@ -457,7 +587,6 @@ button:hover {
           </li>
           <li><i class="far fa-building"></i><span>Office Street,123</span></li>
         </ul>
-        <button>Send a Message</button>
       </div>
       <div class="section">
         <h3 class="title">Our Services</h3>
@@ -481,6 +610,7 @@ button:hover {
         </ul>
       </div>
     </footer>
+    
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/animation.js"></script>

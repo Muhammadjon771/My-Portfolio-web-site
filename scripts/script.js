@@ -33,18 +33,18 @@ responsiveToggle.addEventListener("click", (e) => {
 
 const toggleThemeButton = document.getElementById('toggleTheme');
 const body = document.body;
-const sunIcon = document.getElementById('moonIcon');
-const moonIcon = document.getElementById('sunIcon');
+const sunIcon = document.getElementById('sunIcon');
+const moonIcon = document.getElementById('moonIcon');
 
-// Изначально проверяем, есть ли сохраненный режим в localStorage
+// Проверяем сохранённый режим в localStorage
 if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light-mode');
-    sunIcon.style.display = 'none'; // Прячем иконку солнца
-    moonIcon.style.display = 'inline'; // Показываем иконку луны
+    sunIcon.style.display = 'none'; // Прячем солнце
+    moonIcon.style.display = 'inline'; // Показываем луну
 } else {
     body.classList.add('dark-mode');
-    sunIcon.style.display = 'inline'; // Показываем иконку солнца
-    moonIcon.style.display = 'none'; // Прячем иконку луны
+    sunIcon.style.display = 'inline'; // Показываем солнце
+    moonIcon.style.display = 'none'; // Прячем луну
 }
 
 toggleThemeButton.addEventListener('click', () => {
@@ -53,13 +53,13 @@ toggleThemeButton.addEventListener('click', () => {
 
     // Переключаем отображение иконок
     if (body.classList.contains('light-mode')) {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'inline';
-        localStorage.setItem('theme', 'light');
+        sunIcon.style.display = 'none'; // Прячем солнце
+        moonIcon.style.display = 'inline'; // Показываем луну
+        localStorage.setItem('theme', 'light'); // Сохраняем светлый режим
     } else {
-        sunIcon.style.display = 'inline';
-        moonIcon.style.display = 'none';
-        localStorage.setItem('theme', 'dark');
+        sunIcon.style.display = 'inline'; // Показываем солнце
+        moonIcon.style.display = 'none'; // Прячем луну
+        localStorage.setItem('theme', 'dark'); // Сохраняем тёмный режим
     }
 });
 

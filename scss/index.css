@@ -896,21 +896,11 @@ footer .section .tags li:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .portfolio .container {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+  .cursor{
+    display: none;
   }
-  .portfolio .container .portfolio__container {
-    padding: 1rem;
-  }
-  .portfolio .container .portfolio__container .image {
-    width: 200px;
-  }
-  .portfolio .container .portfolio__container .image img:active {
-    top: -240% !important;
-  }
-  .portfolio .container .portfolio__container:nth-of-type(2) .image img:active {
-    top: -260%;
+  .portfolio {
+    display: none;
   }
   .services .container {
     -ms-grid-columns: 1fr;
