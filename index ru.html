@@ -10,10 +10,43 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Асламов Мухаммаджон</title>
     <style>
+      .uz{
+          color: #04dee1;
+      }
+      @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
       @media screen and (min-width: 280px) and (max-width: 1080px) {
-  body {
-    overflow-x: hidden;
-  }
+        body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Светлая тема */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Иконки */
+#sunIcon2, #moonIcon2 {
+    display: inline; /* По умолчанию отображаем иконки */
+}
+
+/* Скрыть иконку по умолчанию */
+#moonIcon2 {
+    display: none; /* Скрываем луну по умолчанию */
+}
   .defaultMargin {
     margin: 0 10vw;
   }
@@ -51,9 +84,9 @@
   .cont{
     margin-top: 20px;
   }
-  .toggleTheme{
+  #toggleTheme2{
     display: flex !important;
-    margin-left: 20px;
+    margin-left: 55px;
   }
   .hero {
     margin: 0 10vw;
@@ -143,6 +176,51 @@
     padding: 5vw;
     gap: 1rem;
   }
+  .light-mode .coil {
+  border-top: 2px dashed #333;
+}  
+.light-mode .language:nth-of-type(1) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(2) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(3) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(5) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode h2{
+  color: black;
+}
+.light-mode .brand h2{
+  color: var(--coil-color-dark);
+}
+.light-mode .skill h3{
+  color: black;
+}
+.light-mode .title h3{
+  color: black;
+}
+.light-mode .form input{
+  color: black !important;
+}
+.light-mode .text-area{
+  color: black !important;
+}
 }
       button {
   padding: 1rem 1.8rem;
@@ -219,6 +297,8 @@ button:hover {
   color: black !important;
 }
 
+
+
     </style>
   </head>
   <body>
@@ -240,16 +320,22 @@ button:hover {
           <li><a href="#skills">Навыки</a></li>
           <li><a href="#portfolio">Портфолио</a></li>
           <li><a href="#services">Услуги</a></li>
-          <li><a href=""><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://github.com/Muhammadjon771" target="_blank"><i class="fa-brands fa-github"></i></a></li>
           <li><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
           <li><i class="fab fa-instagram"></i></li>
+          <li class="dropdown">
+            <i class="fa-solid fa-globe"></i>
+            <a href="#">Uz</a>
+                <ul class="dropdown-content">
+                    <li><a href="/index en.html">En</a></li><br>
+                    <li><a href="/index ru.html">Ru</a></li>
+                </ul>
+          </li>
           <button id="toggleTheme">
             <i class="fa-regular fa-sun" id="sunIcon"></i>
             <i class="fa-regular fa-moon" id="moonIcon"></i>
         </button>
-        <button class="nav__link cont" onclick="">
-          <i class="far fa-id-card"></i> Связаться с нами
-        </button>
+        
         </ul>
       </div>
     </nav>
@@ -266,14 +352,21 @@ button:hover {
           
           <ul>
            
-            <li class="nav__link logo"><i class="fa-brands fa-github"></i></li>
+            <li class="nav__link logo"><a href="https://github.com/Muhammadjon771" target="_blank"><i class="fa-brands fa-github"></i></a></li>
             <li class="nav__link logo"><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
             <li class="nav__link logo"><i class="fab fa-instagram"></i></li>
           </ul>
-          
-          <button class="nav__link cont" onclick="">
-            <i class="far fa-id-card"></i> Связаться с нами
-          </button>
+          <button id="toggleTheme2">
+            <i class="fa-regular fa-sun" id="sunIcon2"></i>
+            <i class="fa-regular fa-moon" id="moonIcon2"></i>
+            
+        </button>
+        <li class="r-dropdown">
+          <i style="display: inline; margin-left: 30px;" class="fa-solid fa-globe"></i>
+          <a href="#" class="uz">Ru</a> 
+          <a href="/index.html" class="en">Uz</a>
+          <a href="/index en.html" class="ru">En</a>
+        </li>
         </ul>
       </div>
     </div>
@@ -551,7 +644,7 @@ button:hover {
         <form action="" class="form">
           <input class="input" type="text" placeholder="Имя" />
           <input type="email" placeholder="Эл. почта" />
-          <input type="text"  placeholder="Текст" />
+          <textarea class="text-area" id="message" name="message" rows="10" cols="20" placeholder="Введите свое сообщение здесь..."></textarea>
           <button type="submit">Отправить</button>
         </form>
       </div>
@@ -565,13 +658,12 @@ button:hover {
           <h2>Портфолио.</h2>
         </div>
         <p>
-          Аутентичный и инновационный. Создан до мельчайших деталей с упором на удобство использования и производительность.
+          Я Front-End разработчик. Углублясь в изучении JavaScript и ReactJS, собираюсь стать Full stack разработчиком и изучать Node js, Angular и ReactJS.
         </p>
         <ul class="social">
-          <li><i class="fab fa-facebook-f"></i></li>
-          <li><i class="fab fa-instagram"></i></li>
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><a href="https://github.com/Muhammadjon771" target="_blank"><i style="color: #818080;" class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://t.me/Uusjo9" target="_blank"><i class="fa-brands fa-telegram" style="color: #818080;"></i></a></li>
+          <li><i class="fab fa-linkedin-in" target="_blank"></i></li>
         </ul>
       </div>
       <div class="section">
@@ -580,7 +672,7 @@ button:hover {
           <li><i class="fas fa-phone"></i><span>+9998 77 777 77 77</span></li>
           <li>
             <i class="far fa-envelope-open"></i
-            ><span>aslamov@gmail.com</span>
+            ><span>muhammadzon329@gmail.com</span>
           </li>
           <li><i class="far fa-building"></i><span>Офисная улица,123</span></li>
         </ul>

@@ -10,9 +10,40 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Aslamov Muhammadjon</title>
     <style>
+      .uz{
+          color: #04dee1;
+      }
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
       @media screen and (min-width: 280px) and (max-width: 1080px) {
-  body {
-    overflow-x: hidden;
+ /* Темная тема */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Светлая тема */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Иконки */
+#sunIcon2, #moonIcon2 {
+    display: inline; /* По умолчанию отображаем иконки */
+}
+
+/* Скрыть иконку по умолчанию */
+#moonIcon2 {
+    display: none; /* Скрываем луну по умолчанию */
+}
+#toggleTheme2{
+    display: flex !important;
+    margin-left: 55px;
   }
   .defaultMargin {
     margin: 0 10vw;
@@ -140,7 +171,51 @@
     padding: 5vw;
     gap: 1rem;
   }
-
+  .light-mode .coil {
+  border-top: 2px dashed #333;
+}  
+.light-mode .language:nth-of-type(1) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(2) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(3) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(5) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode h2{
+  color: black;
+}
+.light-mode .brand h2{
+  color: var(--coil-color-dark);
+}
+.light-mode .skill h3{
+  color: black;
+}
+.light-mode .title h3{
+  color: black;
+}
+.light-mode .form input{
+  color: black !important;
+}
+.light-mode .text-area{
+  color: black !important;
+}
 
 }
 
@@ -218,7 +293,9 @@ button:hover {
 .light-mode .form input{
   color: black !important;
 }
-
+.light-mode .text-area{
+  color: black !important;
+}
     </style>
   </head>
   <body>
@@ -240,14 +317,22 @@ button:hover {
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Services</a></li>
-          <li><i class="fa-brands fa-github"></i></li>
-          <li><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
-          <li><i class="fab fa-instagram"></i></li>
+          <li><a href="https://github.com/Muhammadjon771" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://t.me/Uusjo9" target="_blank"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
+          <li><i class="fab fa-linkedin-in" target="_blank"></i></li>
+          <li class="dropdown">
+            <i class="fa-solid fa-globe"></i>
+            <a href="#">Uz</a>
+                <ul class="dropdown-content">
+                    <li><a href="/index en.html">En</a></li><br>
+                    <li><a href="/index ru.html">Ru</a></li>
+                </ul>
+          </li>
           <button id="toggleTheme">
             <i class="fa-regular fa-sun" id="sunIcon"></i>
             <i class="fa-regular fa-moon" id="moonIcon"></i>
         </button>
-          <button><i class="far fa-id-card"></i> Contact US</button>
+         
           
         </ul>
       </div>
@@ -264,15 +349,22 @@ button:hover {
           <li class="nav__link"><a href="#services">Services</a></li>
           
           <ul>
-            <li class="nav__link logo"><i class="fa-brands fa-github"></i></li>
+            <li class="nav__link logo"><a href="https://github.com/Muhammadjon771" target="_blank"><i class="fa-brands fa-github"></i></a></li>
             <li class="nav__link logo"><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
             <li class="nav__link logo"><i class="fab fa-instagram"></i></li>
             
           </ul>
-        
-          <button class="nav__link cont" onclick="">
-            <i class="far fa-id-card"></i> Contact US
-          </button>
+          <button id="toggleTheme2">
+            <i class="fa-regular fa-sun" id="sunIcon2"></i>
+            <i class="fa-regular fa-moon" id="moonIcon2"></i>
+        </button>
+        <li class="r-dropdown">
+          <i style="display: inline; margin-left: 30px;" class="fa-solid fa-globe"></i>
+          <a href="#" class="uz">En</a> 
+          <a href="/index.html" class="en">Uz</a>
+          <a href="/index ru.html" class="ru">Ru</a>
+        </li>
+          
         </ul>
       </div>
     </div>
@@ -553,7 +645,7 @@ button:hover {
         <form action="" class="form">
           <input class="input" type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
-          <input type="text"  placeholder="Text" />
+          <textarea class="text-area" id="message" name="message" rows="10" cols="20" placeholder="Enter your message here..."></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
@@ -567,14 +659,12 @@ button:hover {
           <h2>Portfolio.</h2>
         </div>
         <p>
-          Authentic and innovative. Built to the smallest detail with a focus on
-          usability and performance.
+          I am junior Front-End developer. Now I'm going to be a Full stack developer. I have been learning Node js, Angular and React js
         </p>
         <ul class="social">
-          <li><i class="fab fa-facebook-f"></i></li>
-          <li><i class="fab fa-instagram"></i></li>
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><a href="https://github.com/Muhammadjon771" target="_blank"><i style="color: #818080;" class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://t.me/Uusjo9" target="_blank"><i class="fa-brands fa-telegram" style="color: #818080;"></i></a></li>
+          <li><i class="fab fa-linkedin-in" target="_blank"></i></li>
         </ul>
       </div>
       <div class="section">

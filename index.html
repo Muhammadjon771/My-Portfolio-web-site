@@ -10,10 +10,43 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Aslamov Muhammadjon</title>
     <style>
+      .uz{
+          color: #04dee1;
+      }
+      @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
       @media screen and (min-width: 280px) and (max-width: 1080px) {
-  body {
-    overflow-x: hidden;
-  }
+        body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Светлая тема */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Иконки */
+#sunIcon, #moonIcon {
+    display: inline; /* По умолчанию отображаем иконки */
+}
+
+/* Скрыть иконку по умолчанию */
+#moonIcon {
+    display: none; /* Скрываем луну по умолчанию */
+}
   .defaultMargin {
     margin: 0 10vw;
   }
@@ -51,9 +84,9 @@
   .cont{
     margin-top: 20px;
   }
-  .toggleTheme{
+  #toggleTheme2{
     display: flex !important;
-    margin-left: 20px;
+    margin-left: 55px;
   }
   .hero {
     margin: 0 10vw;
@@ -143,6 +176,51 @@
     padding: 5vw;
     gap: 1rem;
   }
+  .light-mode .coil {
+  border-top: 2px dashed #333;
+}  
+.light-mode .language:nth-of-type(1) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(2) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(3) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode .language:nth-of-type(5) img {
+  -webkit-filter: grayscale(100) invert(1);
+          filter: grayscale(100) invert(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.light-mode h2{
+  color: black;
+}
+.light-mode .brand h2{
+  color: var(--coil-color-dark);
+}
+.light-mode .skill h3{
+  color: black;
+}
+.light-mode .title h3{
+  color: black;
+}
+.light-mode .form input{
+  color: black !important;
+}
+.light-mode .text-area{
+  color: black !important;
+}
 }
       button {
   padding: 1rem 1.8rem;
@@ -242,14 +320,22 @@ button:hover {
           <li><a href="#skills">Tajriba</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Xizmatlar</a></li>
-          <li><i class="fa-brands fa-github"></i></li>
+          <li><a href="https://github.com/Muhammadjon771" target="_blank"><i class="fa-brands fa-github"></i></a></li>
           <li><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
           <li><i class="fab fa-instagram"></i></li>
+          <li class="dropdown">
+            <i class="fa-solid fa-globe"></i>
+            <a href="#">Uz</a>
+                <ul class="dropdown-content">
+                    <li><a href="/index en.html">En</a></li><br>
+                    <li><a href="/index ru.html">Ru</a></li>
+                </ul>
+          </li>
           <button id="toggleTheme">
             <i class="fa-regular fa-sun" id="sunIcon"></i>
             <i class="fa-regular fa-moon" id="moonIcon"></i>
         </button>
-          <button><i class="far fa-id-card"></i>Til tanlang</button>
+        
           
         </ul>
       </div>
@@ -266,15 +352,21 @@ button:hover {
           <li class="nav__link"><a href="#services">Xizmatlar</a></li>
           
           <ul>
-            <li class="nav__link logo"><i class="fa-brands fa-github"></i></li>
+            <li class="nav__link logo"><a href="https://github.com/Muhammadjon771" target="_blank"><i class="fa-brands fa-github"></i></a></li>
             <li class="nav__link logo"><a href="https://t.me/Uusjo9"><i class="fa-brands fa-telegram" style="color: #ffffff;"></i></a></li>
             <li class="nav__link logo"><i class="fab fa-instagram"></i></li>
             
           </ul>
-        
-          <button class="nav__link cont" onclick="">
-            <i class="far fa-id-card"></i> Biz bilan bog'lanish
-          </button>
+          <button id="toggleTheme2">
+            <i class="fa-regular fa-sun" id="sunIcon2"></i>
+            <i class="fa-regular fa-moon" id="moonIcon2"></i>
+        </button>
+        <li class="r-dropdown">
+          <i style="display: inline; margin-left: 30px;" class="fa-solid fa-globe"></i>
+          <a href="#" class="uz">Uz</a> 
+          <a href="/index en.html" class="en">En</a>
+          <a href="/index ru.html" class="ru">Ru</a>
+        </li>
         </ul>
       </div>
     </div>
@@ -552,7 +644,7 @@ button:hover {
         <form action="" class="form">
           <input class="input" type="text" placeholder="Ism" />
           <input type="email" placeholder="Email" />
-          <input type="text"  placeholder="Tekst" />
+          <textarea class="text-area" id="message" name="message" rows="10" cols="20" placeholder="Xabaringizni shu yerga kiriting..."></textarea>
           <button type="submit">Jo'natish</button>
         </form>
       </div>
@@ -566,13 +658,12 @@ button:hover {
           <h2>Portfolio.</h2>
         </div>
         <p>
-          Haqiqiy va innovatsion. Foydalanish qulayligi va unumdorligiga e'tibor qaratgan holda eng kichik detallarga qadar ishlab chiqilgan.
+          Men Front-End dasturchisiman. Endi men Full stack dasturchisi bo'laman. Men Node js, Angular va React js-ni o'rganyapman.
         </p>
         <ul class="social">
-          <li><i class="fab fa-facebook-f"></i></li>
-          <li><i class="fab fa-instagram"></i></li>
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><a href="https://github.com/Muhammadjon771" target="_blank"><i style="color: #818080;" class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://t.me/Uusjo9" target="_blank"><i class="fa-brands fa-telegram" style="color: #818080;"></i></a></li>
+          <li><i class="fab fa-linkedin-in" target="_blank"></i></li>
         </ul>
       </div>
       <div class="section">
