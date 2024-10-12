@@ -981,14 +981,18 @@ footer .section .tags li:hover {
 .dropdown-content {
   display: none; /* Скрыть содержимое меню по умолчанию */
   position: absolute;
-  background-color: black; /* Цвет фона */
+  background-color: transparent; /* Цвет фона */
   min-width: 80px;
   max-width: 80px;
   z-index: 1;
   border-radius: 4px; /* Скругленные углы */
-  margin-top: -1px;
+  margin-top: -15px;
+  padding-top: 10px;
 }
-
+.light-mode .dropdown-content{
+  margin-top: 0px;
+  background-color: black;
+}
 .dropdown:hover .dropdown-content {
   display: block; /* Показать содержимое при наведении */
 }
