@@ -991,7 +991,11 @@ footer .section .tags li:hover {
 }
 .light-mode .dropdown-content{
   margin-top: 0px;
+<<<<<<< HEAD
   background-color: #0b0b0b;
+=======
+  background-color: black;
+>>>>>>> 463ad22e762d9c38d6d096c0ef50ea283c0c7668
 }
 .dropdown:hover .dropdown-content {
   display: block; /* Показать содержимое при наведении */
