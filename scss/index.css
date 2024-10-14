@@ -21,8 +21,8 @@ body {
 
 .cursor{
   position: fixed;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color:  #087c6e;
   pointer-events: none;
@@ -981,14 +981,18 @@ footer .section .tags li:hover {
 .dropdown-content {
   display: none; /* Скрыть содержимое меню по умолчанию */
   position: absolute;
-  background-color: black; /* Цвет фона */
+  background-color: transparent; /* Цвет фона */
   min-width: 80px;
   max-width: 80px;
   z-index: 1;
   border-radius: 4px; /* Скругленные углы */
-  margin-top: -1px;
+  margin-top: -15px;
+  padding-top: 10px;
 }
-
+.light-mode .dropdown-content{
+  margin-top: 0px;
+  background-color: #0b0b0b;
+}
 .dropdown:hover .dropdown-content {
   display: block; /* Показать содержимое при наведении */
 }

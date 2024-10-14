@@ -32,45 +32,42 @@ responsiveToggle.addEventListener("click", (e) => {
 });
 
 const toggleThemeButton = document.getElementById('toggleTheme');
-const toggleThemeButton2 = document.getElementById('toggleTheme2'); // For responsive navbar
+const toggleThemeButton2 = document.getElementById('toggleTheme2'); 
 const body = document.body;
 const sunIcon = document.getElementById('sunIcon');
 const moonIcon = document.getElementById('moonIcon');
-const sunIcon2 = document.getElementById('sunIcon2'); // For responsive navbar
-const moonIcon2 = document.getElementById('moonIcon2'); // For responsive navbar
+const sunIcon2 = document.getElementById('sunIcon2'); 
+const moonIcon2 = document.getElementById('moonIcon2'); 
 
-// Function to update the theme and icons
 function updateTheme(theme) {
-    body.classList.remove('light-mode', 'dark-mode'); // Remove both classes
+    body.classList.remove('light-mode', 'dark-mode'); 
     if (theme === 'light') {
         body.classList.add('light-mode');
-        sunIcon.style.display = 'none'; // Hide sun icon
-        moonIcon.style.display = 'inline'; // Show moon icon
-        sunIcon2.style.display = 'none'; // Hide sun icon (responsive)
-        moonIcon2.style.display = 'inline'; // Show moon icon (responsive)
+        sunIcon.style.display = 'none'; 
+        moonIcon.style.display = 'inline'; 
+        sunIcon2.style.display = 'none'; 
+        moonIcon2.style.display = 'inline'; 
     } else {
         body.classList.add('dark-mode');
-        sunIcon.style.display = 'inline'; // Show sun icon
-        moonIcon.style.display = 'none'; // Hide moon icon
-        sunIcon2.style.display = 'inline'; // Show sun icon (responsive)
-        moonIcon2.style.display = 'none'; // Hide moon icon (responsive)
+        sunIcon.style.display = 'inline'; 
+        moonIcon.style.display = 'none'; 
+        sunIcon2.style.display = 'inline'; 
+        moonIcon2.style.display = 'none'; 
     }
-    localStorage.setItem('theme', theme); // Save the current theme
+    localStorage.setItem('theme', theme); 
 }
 
-// Check saved theme in localStorage
-const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark theme if not found
+const savedTheme = localStorage.getItem('theme') || 'dark'; 
 updateTheme(savedTheme);
 
-// Event listener for the theme toggle buttons
 toggleThemeButton.addEventListener('click', () => {
     const currentTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
-    updateTheme(currentTheme); // Update theme based on current theme
+    updateTheme(currentTheme); 
 });
 
 toggleThemeButton2.addEventListener('click', () => {
     const currentTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
-    updateTheme(currentTheme); // Update theme based on current theme
+    updateTheme(currentTheme); 
 });
 
 
@@ -90,37 +87,34 @@ let index1 = 0;
 let index2 = 0;
 let index3 = 0;
 
-// Функция для печати первого текста
 function typeText1() {
     if (index1 < text1.length) {
         textElement.innerHTML += text1.charAt(index1);
         index1++;
-        setTimeout(typeText1, 100); // Задержка между буквами (100 мс)
+        setTimeout(typeText1, 100); 
     } else {
-        setTimeout(deleteText1, 500); // Пауза перед удалением текста
+        setTimeout(deleteText1, 500); 
     }
 }
 
-// Функция для удаления текста по одной букве
 function deleteText1() {
     if (index1 >= 0) {
         textElement.innerHTML = text1.substring(0, index1);
         index1--;
-        setTimeout(deleteText1, 100); // Задержка между удалением букв (100 мс)
+        setTimeout(deleteText1, 100);
     } else {
-        setTimeout(typeText2, 500); // Пауза перед началом второго текста
+        setTimeout(typeText2, 500); 
     }
 }
 
-// Функция для печати второго текста
 function typeText2() {
     if (index2 < text2.length) {
         textElement.innerHTML += text2.charAt(index2);
         index2++;
-        setTimeout(typeText2, 100); // Задержка между буквами (100 мс)
+        setTimeout(typeText2, 100); 
     }
     else {
-      setTimeout(deleteText2, 500); // Пауза перед удалением текста
+      setTimeout(deleteText2, 500); 
   }
 }
 
@@ -128,9 +122,9 @@ function deleteText2() {
   if (index2 >= 0) {
       textElement.innerHTML = text2.substring(0, index2);
       index2--;
-      setTimeout(deleteText2, 100); // Задержка между удалением букв (100 мс)
+      setTimeout(deleteText2, 100); 
   } else {
-      setTimeout(typeText3, 500); // Пауза перед началом второго текста
+      setTimeout(typeText3, 500); 
   }
 }
 
@@ -138,11 +132,11 @@ function typeText3() {
   if (index3 < text3.length) {
       textElement.innerHTML += text3.charAt(index3);
       index3++;
-      setTimeout(typeText3, 100); // Задержка между буквами (100 мс)
+      setTimeout(typeText3, 100); 
   }
 }
 
-typeText1(); // Начинаем анимацию
+typeText1(); 
 
 
 
