@@ -22,31 +22,69 @@
             </div>
             <form id="signin" class="input-group">
                 <input type="email" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Parol" required>
+                <div class="password-container">
+                    <input type="password" id="password" class="input-field" placeholder="Parol" required>
+                    <i class="fas fa-eye eye" id="togglePassword"></i>
+                </div>
                 <a href="#" class="forgot-password">Parolni unutdingizmi?</a>
                 <button type="submit" class="submit-btn">Kirish</button>
             </form>
             <form id="signup" class="input-group">
                 <input type="email" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Parol" required>
-                <input type="password" class="input-field" placeholder="Parolni tasdiqlang" required><br><br>
+                <div class="password-container">
+                    <input type="password" id="password2" class="input-field" placeholder="Parol" required>
+                    <i class="fas fa-eye eye2" id="togglePassword2"></i>
+                </div>
+                <div class="password-container">
+                <input type="password" class="input-field" id="password3" placeholder="Parolni tasdiqlash" required>
+                <i class="fas fa-eye eye3" id="togglePassword3"></i>
+                </div>
+                <br><br>
                 <button type="submit" class="submit-btn">Ro'yxatdan o'tish</button>
             </form>
         </div>
     </div>
 
     <script>
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput2 = document.getElementById('password2');
+        const togglePassword2 = document.getElementById('togglePassword2');
+        const passwordInput3 = document.getElementById('password3');
+        const togglePassword3 = document.getElementById('togglePassword3');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            this.classList.toggle('fa-eye-slash');
+        });
+        togglePassword2.addEventListener('click', function () {
+            const type = passwordInput2.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput2.setAttribute('type', type);
+
+            this.classList.toggle('fa-eye-slash');
+        });
+        togglePassword3.addEventListener('click', function () {
+            const type = passwordInput3.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput3.setAttribute('type', type);
+
+            this.classList.toggle('fa-eye-slash');
+        });
+
+
+
         var signinForm = document.getElementById("signin");
         var signupForm = document.getElementById("signup");
         
         function signup() {
-            signinForm.style.display = "none";  // Скрываем форму "Sign In"
-            signupForm.style.display = "block";  // Показываем форму "Sign Up"
+            signinForm.style.display = "none";  
+            signupForm.style.display = "block";  
         }
         
         function signin() {
-            signinForm.style.display = "block";  // Показываем форму "Sign In"
-            signupForm.style.display = "none";   // Скрываем форму "Sign Up"
+            signinForm.style.display = "block";  
+            signupForm.style.display = "none";   
         }
         </script>
 </body>

@@ -13,6 +13,21 @@ body {
     background: linear-gradient(to right, #09796b, #00f9ff);
 }
 
+.eye{
+    position: absolute;
+    right: 20px;
+    bottom: 98px;
+}
+.eye2{
+    position: absolute;
+    right: 20px;
+    bottom: 156px;
+}
+.eye3{
+    position: absolute;
+    right: 20px;
+    bottom: 96px;
+}
 .container {
     width: 400px;
     height: 600px;
