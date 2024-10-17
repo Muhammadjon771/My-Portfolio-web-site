@@ -38,6 +38,9 @@ body {
   color: white;
 }
 
+.get-started-a{
+  text-decoration: none;
+}
 
 
 ::-webkit-scrollbar {
